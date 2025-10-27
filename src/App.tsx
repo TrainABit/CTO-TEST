@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CalculatorCard } from './components/CalculatorCard';
 import { DealFlowTracker } from './components/DealFlowTracker';
+import { GlobalDisclaimers } from './components/GlobalDisclaimers';
+import { SettingsPanel } from './components/SettingsPanel';
+import { useAppSettings } from './context/AppSettingsContext';
 import {
   calculateExitImpact,
   calculateGrowthToTarget,
@@ -33,7 +36,7 @@ const defaultExitInput = {
   taxRate: '25',
 };
 
-const defaultHybridInput = {
+const baseHybridInput = {
   annualCashComp: '180000',
   annualCashDistribution: '20000',
   cashYears: '4',
@@ -77,6 +80,8 @@ function getRunwayAccent(classification: RunwayResult['runwayClassification']): 
 }
 
 export default function App() {
+  const { settings } = useAppSettings();
+
   const [runwayInput, setRunwayInput] = useState<RunwayInput>(defaultRunwayInput);
   const [runwayResult, setRunwayResult] = useState<RunwayResult | null>(null);
   const [runwayErrors, setRunwayErrors] = useState<string[]>([]);
@@ -97,17 +102,33 @@ export default function App() {
   const [exitResult, setExitResult] = useState<ExitImpactResult | null>(null);
   const [exitErrors, setExitErrors] = useState<string[]>([]);
 
-  const [hybridInput, setHybridInput] = useState<HybridInputState>({
-    annualCashComp: defaultHybridInput.annualCashComp,
-    annualCashDistribution: defaultHybridInput.annualCashDistribution,
-    cashYears: defaultHybridInput.cashYears,
-    equityPercentage: defaultHybridInput.equityPercentage,
-    exitValuation: defaultHybridInput.exitValuation,
-    exitYear: defaultHybridInput.exitYear,
-    discountRate: defaultHybridInput.discountRate,
-  });
+  const [hybridInput, setHybridInput] = useState<HybridInputState>(() => ({
+    annualCashComp: baseHybridInput.annualCashComp,
+    annualCashDistribution: baseHybridInput.annualCashDistribution,
+    cashYears: baseHybridInput.cashYears,
+    equityPercentage: baseHybridInput.equityPercentage,
+    exitValuation: baseHybridInput.exitValuation,
+    exitYear: baseHybridInput.exitYear,
+    discountRate: String(settings.defaultDiscountRate),
+  }));
   const [hybridResult, setHybridResult] = useState<HybridScenarioResult | null>(null);
   const [hybridErrors, setHybridErrors] = useState<string[]>([]);
+
+  const previousDefaultDiscountRef = useRef(String(settings.defaultDiscountRate));
+
+  useEffect(() => {
+    const nextDiscount = String(settings.defaultDiscountRate);
+    setHybridInput((current) => {
+      if (current.discountRate === previousDefaultDiscountRef.current) {
+        return {
+          ...current,
+          discountRate: nextDiscount,
+        };
+      }
+      return current;
+    });
+    previousDefaultDiscountRef.current = nextDiscount;
+  }, [settings.defaultDiscountRate]);
 
   useEffect(() => {
     const runwayEval = calculateRunway(defaultRunwayInput);
@@ -122,10 +143,19 @@ export default function App() {
     setExitResult(exitEval.result);
     setExitErrors(exitEval.errors);
 
-    const hybridEval = calculateHybridScenario(defaultHybridInput);
+    const hybridDefaults = {
+      annualCashComp: baseHybridInput.annualCashComp,
+      annualCashDistribution: baseHybridInput.annualCashDistribution,
+      cashYears: baseHybridInput.cashYears,
+      equityPercentage: baseHybridInput.equityPercentage,
+      exitValuation: baseHybridInput.exitValuation,
+      exitYear: baseHybridInput.exitYear,
+      discountRate: String(settings.defaultDiscountRate),
+    };
+    const hybridEval = calculateHybridScenario(hybridDefaults);
     setHybridResult(hybridEval.result);
     setHybridErrors(hybridEval.errors);
-  }, []);
+  }, [settings.defaultDiscountRate]);
 
   const evaluateRunway = () => {
     const evaluation = calculateRunway(runwayInput);
@@ -165,10 +195,15 @@ export default function App() {
         </p>
       </header>
 
+      <GlobalDisclaimers />
+      <SettingsPanel />
+
       <section id="plan-insights" className="plan-detail-anchor">
         <h2>Plan insight quick-links</h2>
         <p>Use the calculators and tracker to inform plan assumptions, then jump back here for deeper review.</p>
         <ul>
+          <li><a href="#settings">Workspace settings</a></li>
+          <li><a href="#disclaimers">Important notices</a></li>
           <li><a href="#runway-calculator">Burn &amp; capital requirements</a></li>
           <li><a href="#growth-calculator">Return targets &amp; IRR planning</a></li>
           <li><a href="#exit-calculator">Exit waterfall implications</a></li>
