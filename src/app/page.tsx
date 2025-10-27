@@ -1,5 +1,6 @@
 import { ArrowUpRight, BarChart3, PiggyBank, Settings, ShieldCheck } from "lucide-react";
 
+import { SelectedPlansSummary } from "@/components/plans/selected-plans-summary";
 import { PerformanceChart } from "@/components/dashboard/performance-chart";
 import { TimeRangeToggle } from "@/components/dashboard/time-range-toggle";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -83,6 +84,25 @@ export default function Home() {
             <PerformanceChart />
           </CardContent>
         </Card>
+      </section>
+
+      <section aria-labelledby="selected-plans-heading" className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 id="selected-plans-heading" className="text-xl font-semibold">
+            Selected strategies
+          </h2>
+          <a
+            href="/plans"
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "sm" }),
+              "gap-1 text-muted-foreground",
+            )}
+          >
+            Manage comparison
+            <ArrowUpRight className="size-4" aria-hidden="true" />
+          </a>
+        </div>
+        <SelectedPlansSummary />
       </section>
 
       <section aria-labelledby="insights-heading" className="space-y-6">
