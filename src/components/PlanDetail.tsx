@@ -9,7 +9,7 @@ import {
   ExitChecklistItem,
   RiskTemplate,
   ChecklistTemplateItem,
-} from '@/data/plans';
+} from '@/content/plans';
 import { useLocalStorageState } from '@/hooks/useLocalStorageState';
 
 type ChecklistItem = ChecklistTemplateItem & {

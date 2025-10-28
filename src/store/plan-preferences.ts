@@ -33,11 +33,16 @@ export const usePlanPreferenceStore = create(
       name: "plan-preferences",
       storage: createJSONStorage(() => localStorage),
       version: 1,
-      migrate: (persistedState) => ({
-        primaryPlanId: null,
-        secondaryPlanId: null,
-        ...(persistedState as Partial<PlanPreferenceState>),
-      }),
+      migrate: (persistedState, version) => {
+        const state = persistedState as Partial<PlanPreferenceState>;
+        return {
+          primaryPlanId: state.primaryPlanId ?? null,
+          secondaryPlanId: state.secondaryPlanId ?? null,
+          setPrimaryPlan: () => {},
+          setSecondaryPlan: () => {},
+          clearSelections: () => {},
+        };
+      },
     },
   ),
 );
