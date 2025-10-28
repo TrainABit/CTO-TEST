@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Strategic plan comparison view</title>
+  <desc id="desc">Stylised table comparing three strategic plans with objectives, capital allocation, and phase focus.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f1f5f9" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" rx="32" />
+  <g transform="translate(96 72)">
+    <text font-family="Inter, Segoe UI, sans-serif" font-size="36" font-weight="600" fill="#0f172a">Plan comparison</text>
+    <text y="44" font-family="Inter, Segoe UI, sans-serif" font-size="18" fill="#1f2937">Side-by-side look at objectives, capital and current focus.</text>
+  </g>
+  <g transform="translate(96 150)">
+    <rect width="1088" height="96" rx="20" fill="#0f172a" opacity="0.85" />
+    <text x="32" y="56" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="600" fill="#f8fafc">Filter: Transformation roadmaps · Sorted by readiness</text>
+  </g>
+  <g transform="translate(96 270)">
+    <rect width="1088" height="320" rx="20" fill="#ffffff" stroke="#cbd5f5" stroke-width="2" />
+    <g font-family="Inter, Segoe UI, sans-serif" font-size="16" fill="#1f2937" font-weight="600">
+      <text x="36" y="58">Plan</text>
+      <text x="296" y="58">Primary objective</text>
+      <text x="628" y="58">Capital allocation</text>
+      <text x="896" y="58">Current focus</text>
+    </g>
+    <line x1="32" y1="78" x2="1056" y2="78" stroke="#dbeafe" stroke-width="2" />
+    <g font-family="Inter, Segoe UI, sans-serif" font-size="18" fill="#1f2937" font-weight="600">
+      <text x="36" y="128">Northwind Expansion 2025</text>
+      <text x="36" y="204">Atlas Platform Modernization</text>
+      <text x="36" y="280">Helios Product-Led Growth</text>
+    </g>
+    <g font-family="Inter, Segoe UI, sans-serif" font-size="16" fill="#334155">
+      <text x="296" y="128">Launch profitable expansion playbook</text>
+      <text x="296" y="204">Deliver resilient billing & entitlements core</text>
+      <text x="296" y="280">Modernize funnel for self-serve acquisition</text>
+    </g>
+    <g font-family="Inter, Segoe UI, sans-serif" font-size="16" fill="#2563eb" font-weight="600">
+      <text x="628" y="128">$4.8M</text>
+      <text x="628" y="204">$3.2M</text>
+      <text x="628" y="280">$1.5M</text>
+    </g>
+    <g font-family="Inter, Segoe UI, sans-serif" font-size="16" fill="#1f2937">
+      <text x="896" y="128">Market validation</text>
+      <text x="896" y="204">Pilot migration</text>
+      <text x="896" y="280">Activation metrics</text>
+    </g>
+    <g font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#475569">
+      <text x="36" y="156">Focus areas: Logistics · Growth · Customer experience</text>
+      <text x="36" y="232">Focus areas: Platform · Reliability · DevEx</text>
+      <text x="36" y="308">Focus areas: Monetisation · Product analytics · Ecosystem</text>
+    </g>
+    <g transform="translate(972 108)">
+      <rect width="80" height="32" rx="10" fill="#2563eb" />
+      <text x="12" y="22" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Open</text>
+    </g>
+    <g transform="translate(972 188)">
+      <rect width="80" height="32" rx="10" fill="#2563eb" opacity="0.9" />
+      <text x="16" y="22" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Open</text>
+    </g>
+    <g transform="translate(972 268)">
+      <rect width="80" height="32" rx="10" fill="#2563eb" opacity="0.9" />
+      <text x="10" y="22" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Review</text>
+    </g>
+  </g>
+  <g transform="translate(96 616)">
+    <rect width="320" height="64" rx="16" fill="#2563eb" opacity="0.9" />
+    <text x="32" y="40" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#ffffff">Export comparison CSV</text>
+  </g>
+</svg>
