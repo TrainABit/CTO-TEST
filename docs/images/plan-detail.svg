@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Plan detail tracker view</title>
+  <desc id="desc">Stylised representation of the plan detail page highlighting progress indicators, checklists, KPIs and risk boards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef2ff" />
+      <stop offset="100%" stop-color="#e0e7ff" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" rx="32" />
+  <g transform="translate(88 72)">
+    <text font-family="Inter, Segoe UI, sans-serif" font-size="36" font-weight="700" fill="#111827">Northwind Expansion 2025</text>
+    <text y="44" font-family="Inter, Segoe UI, sans-serif" font-size="18" fill="#1f2937">Execution tracker · Phases, KPIs, risks, exit readiness</text>
+  </g>
+  <g transform="translate(88 148)">
+    <rect width="520" height="132" rx="22" fill="#2563eb" opacity="0.14" />
+    <text x="24" y="48" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#1f2937">Phase progress</text>
+    <rect x="24" y="68" width="472" height="14" rx="8" fill="#cbd5fe" />
+    <rect x="24" y="68" width="312" height="14" rx="8" fill="#2563eb" />
+    <text x="24" y="114" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#374151">2 of 3 phases have completed critical checklists.</text>
+  </g>
+  <g transform="translate(648 148)">
+    <rect width="520" height="132" rx="22" fill="#2563eb" opacity="0.14" />
+    <text x="24" y="48" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#1f2937">Readiness summary</text>
+    <text x="24" y="88" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="700" fill="#2563eb">Exit readiness: 64%</text>
+    <text x="24" y="114" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#374151">Checklist items resolved · Risk posture · KPI targets</text>
+  </g>
+  <g transform="translate(88 320)">
+    <rect width="704" height="320" rx="26" fill="url(#panel)" stroke="#d1d9ff" stroke-width="2" />
+    <text x="32" y="60" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="#111827">Execution checklist</text>
+    <g transform="translate(32 90)">
+      <rect width="640" height="70" rx="16" fill="#e0e7ff" opacity="0.65" />
+      <circle cx="40" cy="32" r="14" fill="#10b981" />
+      <text x="68" y="38" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Complete discovery interviews</text>
+      <text x="68" y="58" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#475569">Owner: Research Guild · Due: Mar 08</text>
+    </g>
+    <g transform="translate(32 170)">
+      <rect width="640" height="70" rx="16" fill="#f8fafc" stroke="#dbeafe" stroke-width="2" />
+      <circle cx="40" cy="32" r="14" fill="#f97316" />
+      <text x="68" y="38" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Model incentive runway</text>
+      <text x="68" y="58" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#475569">Owner: Finance partner · Due: Apr 04</text>
+    </g>
+    <g transform="translate(32 250)">
+      <rect width="640" height="70" rx="16" fill="#f8fafc" stroke="#dbeafe" stroke-width="2" />
+      <circle cx="40" cy="32" r="14" fill="#f97316" />
+      <text x="68" y="38" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="600" fill="#0f172a">Publish go / no-go recommendation</text>
+      <text x="68" y="58" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#475569">Owner: COO office · Due: Apr 26</text>
+    </g>
+  </g>
+  <g transform="translate(832 320)">
+    <rect width="336" height="320" rx="26" fill="url(#panel)" stroke="#d1d9ff" stroke-width="2" />
+    <text x="32" y="60" font-family="Inter, Segoe UI, sans-serif" font-size="22" font-weight="600" fill="#111827">Risk register</text>
+    <g transform="translate(32 96)">
+      <rect width="272" height="72" rx="16" fill="#fee2e2" />
+      <text x="16" y="30" font-family="Inter, Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#b91c1c">Regulatory slip</text>
+      <text x="16" y="52" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#7f1d1d">Status: Open · Mitigation in flight</text>
+    </g>
+    <g transform="translate(32 188)">
+      <rect width="272" height="72" rx="16" fill="#fef3c7" />
+      <text x="16" y="30" font-family="Inter, Segoe UI, sans-serif" font-size="16" font-weight="600" fill="#92400e">Incentive overrun</text>
+      <text x="16" y="52" font-family="Inter, Segoe UI, sans-serif" font-size="14" fill="#92400e">Status: Monitoring</text>
+    </g>
+  </g>
+  <g transform="translate(88 660)">
+    <text font-family="Inter, Segoe UI, sans-serif" font-size="16" fill="#1f2937">KPIs trend above target · 8 of 12 exit criteria met · Last review updated 3 days ago</text>
+  </g>
+</svg>
